@@ -2,8 +2,8 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-{/*import VideoFeed from './components/VideoFeed'*/};
-{/*{/*import LearningPath from './components/LearningPath'*/};
+import VideoFeed from './components/VideoFeed';
+import LearningPath from './components/LearningPath';
 import UserProfile from './components/UserProfile';
 import AuthContext from './context/AuthContext';
 
@@ -18,7 +18,7 @@ function App() {
                     {user ? (
                         <>
                             <button onClick={logoutUser}>Logout</button>
-                            <p>Logged in as {user.username}</p>
+                            <p>Logged in as {user.username} {user.username}</p>
                         </>
                     ) : (
                         <form onSubmit={loginUser}>
@@ -28,12 +28,12 @@ function App() {
                         </form>
                     )}
                 </header>
-               {/* {user && <UserProfile />}
-                <Routes>
+               {user && <UserProfile />}
+               <Routes>
                     <Route path="/videos" element={<VideoFeed />} />
                     <Route path="/learning-path" element={<LearningPath />} />
                     <Route path="/profile" element={<UserProfile />} />
-                </Routes>*/} 
+                </Routes>
             </div>
         </Router>
     );
